@@ -1,13 +1,13 @@
 
 
 <script>
-import  {get} from './utils/index' 
+import {get} from './utils/index'
 export default{
-	async created(){
-		const res = await get('/weapp/test')
-		console.log(res,'hahahah')
-		console.log('小程序启动了')
-	}
+  async created () {
+    const res = await get('/weapp/test')
+    console.log(res, 'hahahah')
+    console.log('小程序启动了')
+  }
 }
 </script>
 
