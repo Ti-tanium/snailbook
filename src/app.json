@@ -1,0 +1,12 @@
+{
+    "pages": [
+      "/pages/me/main"
+    ],
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#EA5149",
+      "navigationBarTitleText": "蜗牛图书",
+      "navigationBarTextStyle": "black"
+    }
+  }
+  
