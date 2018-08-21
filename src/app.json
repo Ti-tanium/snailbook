@@ -16,20 +16,20 @@
       {
         "pagePath": "pages/books/main",
         "text": "图书",
-        "iconPath": "static/images/book.png",
-        "selectedIconPath": "static/images/book-active.png"
+        "iconPath": "static/images/icon/book.png",
+        "selectedIconPath": "static/images/icon/book-active.png"
       },
       {
         "pagePath": "pages/comments/main",
         "text": "评论",
-        "iconPath": "static/images/todo.png",
-        "selectedIconPath": "static/images/todo-active.png"
+        "iconPath": "static/images/icon/todo.png",
+        "selectedIconPath": "static/images/icon/todo-active.png"
       },
       {
         "pagePath": "pages/me/main",
         "text": "个人中心",
-        "iconPath": "static/images/me.png",
-        "selectedIconPath": "static/images/me-active.png"
+        "iconPath": "static/images/icon/me.png",
+        "selectedIconPath": "static/images/icon/me-active.png"
       }
     ]
   }
