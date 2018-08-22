@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="userinfo">
-      <img class='avatar' src="/static/avatar.jpg" alt="">
+      <img class='avatar' src="/static/avatar.jpg" alt="/static/alt-avatar.jpg  ">
       <p class='nickName'>Titanium</p>
     </div>
     <YearProgress></YearProgress>
@@ -11,7 +11,11 @@
 </template>
 
 <script>
+import YearProgress from "@/components/YearProgress";
 export default {
+  components: {
+    YearProgress
+  },
 
   data() {
     return {
