@@ -9,6 +9,8 @@ const CONF = {
   wxMessageToken: "weixinmsgtoken",
   networkTimeout: 30000,
 
+  doubanISBNUrl: "https://api.douban.com/v2/book/isbn/",
+
   port: "5757",
   rootPathname: "",
 

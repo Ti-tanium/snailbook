@@ -1,12 +1,11 @@
 <script>
-import { get } from './utils/index'
-import qcloud from 'wafer2-client-sdk'
-import config from './config'
+import qcloud from "wafer2-client-sdk";
+import config from "./config";
 export default {
-  async created () {
-    qcloud.setLoginUrl(config.loginUrl)
+  async created() {
+    qcloud.setLoginUrl(config.loginUrl);
   }
-}
+};
 </script>
 
 <style>

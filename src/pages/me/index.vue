@@ -12,8 +12,8 @@
 <script>
 import YearProgress from "@/components/YearProgress";
 import qcloud from "wafer2-client-sdk";
-import { showSuccess, showModal } from "@/utils/index";
-//import config from '@/config'
+import { showSuccess, showModal, post } from "@/utils/index";
+import config from "@/config";
 export default {
   components: {
     YearProgress
@@ -68,11 +68,26 @@ export default {
     },
     scanBook() {
       wx.scanCode({
-        onlyFromCamera: true, // 是否只能从相机扫码，不允许从相册选择图片,
+        onlyFromCamera: false, // 是否只能从相机扫码，不允许从相册选择图片,
         success: res => {
-          console.log(res);
+          // res.result contains ISBN number of the book
+          if (res.result) {
+            this.addbook(res.result);
+          }
+        },
+        fail: err => {
+          console.error(err);
         }
       });
+    },
+    async addbook(ISBN) {
+      const res = await post(config.addBookUrl, {
+        ISBN,
+        openId: this.userinfo.openId
+      });
+      if (res.code === 0 && res.data.title) {
+        showSuccess("添加成功");
+      }
     }
   },
 
