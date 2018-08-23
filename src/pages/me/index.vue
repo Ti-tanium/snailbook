@@ -102,6 +102,7 @@ export default {
 
 .nickName {
   margin-top: 40rpx;
+  text-align: center;
 }
 
 .avatar {
