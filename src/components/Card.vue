@@ -1,14 +1,29 @@
 <template>
   <div class="book-card">
-    <div class="thumb">
+    <scroll-view>
+      <div class="thumb">
       <img :src="book.image" class="image" mode='aspectFit'>
     </div>
     <div class="detail">
-      <div class="row">
-        <div class="right">{{book.average}}</div>
-        <div class="left">{{book.title}}</div>
+      <div class="head">
+        <div class="average">{{book.average}}</div>
+        <div class="title">{{book.title}}</div>
+      </div>
+      <div class="content">
+        <div class="author">{{book.author}}</div>
+        <div class="publisher">{{book.publisher}}</div>
+      </div>
+      <div class="footer">
+        <img src="/static/images/icon/View.png">
+        <div class="viewCount">100</div>
+        <div class="contributor">
+          <div>添加者:</div>
+          <div>添加者</div>
+        </div>
+
       </div>
     </div>
+    </scroll-view>
   </div>
 </template>
 
@@ -23,8 +38,9 @@ export default {
 .book-card {
   padding: 10rpx;
   overflow: hidden;
-  margin-top: 10rpx;
-  margin-bottom: 10rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
 }
 .thumb {
   width: 180rpx;
@@ -37,6 +53,56 @@ export default {
 .image {
   max-width: 100%;
   max-height: 100%;
+}
+
+.detail {
+  margin-left: 200rpx;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.head {
+  line-height: 40rpx;
+  margin-bottom: 3px;
+  font-size: 32rpx;
+  color: #222;
+}
+
+.average {
+  float: right;
+}
+
+.title {
+  white-space: normal;
+  margin-right: 80rpx;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: #666;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  height: 20rpx;
+  font-size: 10px;
+  color: #666;
+}
+
+.footer img {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+
+.contributor {
+  margin-left: 80rpx;
+  display: flex;
+  flex-direction: row;
 }
 </style>
 

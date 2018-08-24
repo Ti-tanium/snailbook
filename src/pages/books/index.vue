@@ -1,7 +1,7 @@
 
 <template>
-<div class="containter">
-  <Card :key='book.id' v-for='book in books' :book='book'></Card>
+<div class="container">
+  <Card :key='book.id' v-for='book in books' :book='book' class='card'></Card>
 </div>
 
 </template>
@@ -33,5 +33,8 @@ export default {
 </script>
 
 <style>
+.container {
+  background-color: #f2f2f2;
+}
 </style>
 
