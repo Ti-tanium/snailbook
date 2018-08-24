@@ -1,7 +1,7 @@
 
 <template>
 <div class="containter">
-  <div :key='book.id' v-for='book in book'>{{book.title}}</div>
+  <Card :key='book.id' v-for='book in books' :book='book'></Card>
 </div>
 
 </template>
@@ -10,17 +10,20 @@
 <script>
 import config from '@/config'
 import { get } from '@/utils/index'
+import Card from '@/components/Card'
 export default {
+  components: {
+    Card
+  },
   data () {
     return {
-      book: []
+      books: []
     }
   },
   methods: {
     async getList () {
-      const book = await get(config.bookListUrl)
-      console.log('a', book)
-      this.book = book.data.list
+      const books = await get(config.bookListUrl)
+      this.books = books.data.list
     }
   },
   mounted () {
