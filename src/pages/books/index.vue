@@ -20,13 +20,17 @@ export default {
     return {
       books: [],
       hasMoreDataOfBook: true,
-      pageOfNewData: 0
+      pageIndex: 0,
+      pageSize: 5
     }
   },
   methods: {
     async getList () {
       wx.showNavigationBarLoading()
-      const books = await get(config.bookListUrl, { page: this.pageOfNewData })
+      const books = await get(config.bookListUrl, {
+        pageIndex: this.pageIndex,
+        pageSize: this.pageSize
+      })
       console.log('book getted:', books)
       if (books.data.list.length <= 0) {
         this.hasMoreDataOfBook = false
@@ -47,7 +51,7 @@ export default {
     if (!this.hasMoreDataOfBook) {
       return
     }
-    this.pageOfNewData += 1
+    this.pageIndex += 1
     this.getList()
   }
 }
