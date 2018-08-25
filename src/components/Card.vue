@@ -1,4 +1,5 @@
 <template>
+<a :href="bookDetailUrl">
   <div class="book-card">
     <scroll-view>
       <div class="thumb">
@@ -21,11 +22,12 @@
         <div class="contributor">
           <div>{{book.nickName}}</div>
         </div>
-
       </div>
     </div>
     </scroll-view>
   </div>
+  </a>
+
 </template>
 
 <script>
@@ -35,6 +37,11 @@ export default {
   props: ['book'],
   components: {
     star
+  },
+  computed: {
+    bookDetailUrl () {
+      return '/pages/detail/main?id=' + this.book.id
+    }
   }
 }
 </script>
