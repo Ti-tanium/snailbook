@@ -16,7 +16,6 @@ function request (url, method, data) {
       method: method,
       dataType: 'json', // 如果设为json，会尝试对返回的数据做一次 JSON.parse
       success: res => {
-        console.log('book getted:', res)
         if (res.data.code === 0) {
           resolve(res.data)
         } else {

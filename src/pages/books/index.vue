@@ -1,7 +1,6 @@
 
 <template>
 <div class="container">
-  <Card :key='book.id' v-for='book in books' :book='book' class='card'></Card>
 </div>
 
 </template>
@@ -28,6 +27,10 @@ export default {
   },
   mounted () {
     this.getList()
+  },
+  onPullDownRefresh () {
+    this.getList()
+  },
   }
 }
 </script>
