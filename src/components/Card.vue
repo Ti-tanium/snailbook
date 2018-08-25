@@ -6,7 +6,9 @@
     </div>
     <div class="detail">
       <div class="head">
-        <div class="average">{{book.average}}</div>
+        <div class="average">
+          <star :average='book.average'></star>
+        </div>
         <div class="title">{{book.title}}</div>
       </div>
       <div class="content">
@@ -17,8 +19,7 @@
         <img src="/static/images/icon/View.png">
         <div class="viewCount">100</div>
         <div class="contributor">
-          <div>添加者:</div>
-          <div>添加者</div>
+          <div>{{book.nickName}}</div>
         </div>
 
       </div>
@@ -28,9 +29,13 @@
 </template>
 
 <script>
+import star from '@/components/star'
 export default {
   // 自定义的标签属性 需要声明 才可以使用
-  props: ['book']
+  props: ['book'],
+  components: {
+    star
+  }
 }
 </script>
 
