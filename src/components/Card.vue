@@ -3,7 +3,7 @@
   <div class="book-card">
     <scroll-view>
       <div class="thumb">
-      <img :src="book.image" class="image" mode='aspectFit'>
+      <img :src="book.image" class="image" mode='aspectFit' @click.stop="previewImg">
     </div>
     <div class="detail">
       <div class="head">
@@ -41,6 +41,14 @@ export default {
   computed: {
     bookDetailUrl () {
       return '/pages/detail/main?id=' + this.book.id
+    }
+  },
+  methods: {
+    previewImg () {
+      wx.previewImage({
+        current: this.book.image,
+        urls: [this.book.image]
+      })
     }
   }
 }
