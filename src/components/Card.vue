@@ -18,7 +18,7 @@
       </div>
       <div class="footer">
         <img src="/static/images/icon/View.png">
-        <div class="viewCount">100</div>
+        <div class="viewCount">{{book.count}}</div>
         <div class="contributor">
           <div>{{book.nickName}}</div>
         </div>
